@@ -1,0 +1,13 @@
+package net.java.student_service_app;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ReceiptServiceApplicationTest {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
