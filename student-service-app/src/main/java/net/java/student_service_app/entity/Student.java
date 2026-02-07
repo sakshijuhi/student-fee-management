@@ -1,18 +1,34 @@
 package net.java.student_service_app.entity;
 
-
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "students")
 public class Student {
 
     @Id
-    private String studentId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(name = "student_name", nullable = false)
+    private String studentName;
+
+    @Column(name = "grade")
+    private String grade;
+
+    @Column(name = "mobile_number")
+    private String mobileNumber;
+
+    @Column(name = "school_name")
+    private String schoolName;
+
+    // ✅ Mandatory no-args constructor for JPA
+    public Student() {
+    }
+
+    // --------------------
+    // Getters and Setters
+    // --------------------
 
     public Long getId() {
         return id;
@@ -22,28 +38,35 @@ public class Student {
         this.id = id;
     }
 
-    private Long id;
-    private String studentName;
-    private String grade;
-    private String mobileNumber;
-    private String schoolName;
+    public String getStudentName() {
+        return studentName;
+    }
 
-    // getters & setters
-    public String getStudentId() { return studentId; }
-    public void setStudentId(String studentId) { this.studentId = studentId; }
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
 
-    public String getStudentName() { return studentName; }
-    public void setStudentName(String studentName) { this.studentName = studentName; }
+    public String getGrade() {
+        return grade;
+    }
 
-    public String getGrade() { return grade; }
-    public void setGrade(String grade) { this.grade = grade; }
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 
-    public String getMobileNumber() { return mobileNumber; }
-    public void setMobileNumber(String mobileNumber) { this.mobileNumber = mobileNumber; }
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
 
-    public String getSchoolName() { return schoolName; }
-    public void setSchoolName(String schoolName) { this.schoolName = schoolName; }
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
 
-    public Student() {
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
     }
 }

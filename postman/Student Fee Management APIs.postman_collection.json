@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "08a9fd9f-e98c-4f29-b2d5-480f06022341",
+    "name": "Student Fee Management APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33743691"
+  },
+  "item": [
+    {
+      "name": "Add Student",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"studentId\": \"STU001\",\r\n  \"studentName\": \"John Doe\",\r\n  \"grade\": \"5\",\r\n  \"mobileNumber\": \"9876543210\",\r\n  \"schoolName\": \"Delhi Public School\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "students"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/students/STU001",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "students",
+            "STU001"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "students"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Collect Fee",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"studentId\": \"STU001\",\r\n  \"studentName\": \"John Doe\",\r\n  \"grade\": \"5\",\r\n  \"schoolName\": \"Delhi Public School\",\r\n  \"feeType\": \"Tuition Fee\",\r\n  \"amountPaid\": 2500,\r\n  \"paymentMode\": \"Cash\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/fees/collect",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "fees",
+            "collect"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Receipts by Student",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/fees/receipts/STU001",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "fees",
+            "receipts",
+            "STU001"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

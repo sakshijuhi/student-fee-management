@@ -21,7 +21,7 @@ public class ReceiptController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<ReceiptResponseDTO> createReceipt(
             @RequestBody ReceiptRequestDTO request) {
         return ResponseEntity.ok(service.createReceipt(request));

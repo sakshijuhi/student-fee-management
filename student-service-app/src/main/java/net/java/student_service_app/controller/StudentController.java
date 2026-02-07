@@ -23,7 +23,7 @@ public class StudentController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<StudentResponseDTO> createStudent(
             @RequestBody StudentRequestDTO request) {
         return ResponseEntity.ok(service.createStudent(request));
